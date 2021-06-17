@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;900&family=Roboto&display=swap');
+:root{
+  --main: #f0f0ff;
+  --main-acc: #c0c0ff;
+  --sec: #11116a;
+  --main-bg: #02020f; 
+  --sec-bg: #0a0a20; 
+  --ter-bg: #0c0c4a; 
+  --main-border: solid 3px var(--main);
+  --sec-border: solid 3px var(--sec);
+}
+
+body{
+  background: var(--main-bg);
+  margin:0px;
+  padding:0px;
+  /* text-align:center; */
+}
+
+h1{
+  color: var(--main);
+  text-align:center;
+}
+
+.input-textbox{
+  display: block;
+  width:92%;
+  margin:0 auto;
+  height:20rem;
+  background-color: var(--sec-bg);
+  color: var(--main);
+  border: solid 3px var(--main);
+  border-radius:1rem;
+  padding: 1rem;
+  font-size: 18px;
+}
+
+.evaluate-button{
+    border: var(--sec-border);
+    border-radius:0.7rem;
+    width:15rem;
+    height:5rem;
+    margin:2rem;
+    color:var(--main-acc);
+    background-color:var(--sec-bg);
+    font-family: 'Montserrat', sans-serif;
+    font-weight:900;
+    font-size:30px;
+}
+.evaluate-button:hover{
+  color:var(--main);
+}
+.evaluate-button:active{
+  background-color: var(--ter-bg)
+}
+
+.result{
+  background-color: var(--sec-bg);
+  border: var(--sec-border);
+  border-radius: 0.6rem;
+  padding: 0.5rem;
+  display: flex;
+  margin: 1rem;
+}
+
+.properties-box{
+  background-color: var(--ter-bg);
+  color:var(--main);
+  margin: 0.4rem;
+  border-radius:0.5rem;
+  padding-top:0.6rem;
+  width: 11rem;
+  height: 11.56rem; /* just to match up with the image-box */
+}
+    /* 250x300 */
+    .summary{
+      text-align:center;
+      font-family: 'Roboto', sans-serif;
+      font-size:18px;
+      margin:0.2rem 0rem;
+    }
+
+    .property{
+      display:flex;
+      align-items: center;
+      justify-content: space-between;
+      margin:0.6rem;
+      margin-right:1rem;
+    }
+
+        .property div {
+         display:flex;
+          justify-content:left;
+        }
+            /* icon */
+            .property img{
+              width:1.3rem;
+              height:1.3rem;
+              background-color: #ffffff;
+            }
+            /* Width:  */
+            .property div p {
+              font-family: 'Montserrat', sans-serif;
+              margin-top: 0;
+              margin-bottom: 0;
+              margin-left:0.3rem;
+            }
+        /* 250 */
+        .property span {
+          font-family: 'Roboto', sans-serif;
+        }
+
+.image-box {
+  background-color: var(--ter-bg);
+  margin: 0.4rem;
+  height: 12rem;
+  border-radius:0.3rem;
+}
+
+    .image-box img{
+      height:10rem;
+    }
+
+    .image-buttons{
+      margin:0 0.5rem;
+      display:flex;
+    }
+
+        .image-buttons button{
+          margin-left:0.2rem;
+        }
