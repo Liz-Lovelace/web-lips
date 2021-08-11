@@ -6,9 +6,7 @@ function summary(d){
     s += d.width;
   else
     return "";
-  
-  
-  
+    
   if (d.height)
     s += "x" + d.height;
   else if (d.length)
@@ -71,4 +69,4 @@ function resultPlaceholder(name = ""){
 `
 }
 
-export {result, resultPlaceholder};
+export = {result, resultPlaceholder};
