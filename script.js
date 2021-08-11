@@ -10,27 +10,6 @@ async function fetchInfo(url){
   return productInfo;
 }
 
-async function processLink(url){
-  //I'm adding a placeholder element to place the finished result in it's place when it's fetched
-  let index = results.children.length;
-  let resultRef = document.createElement('div');
-  resultRef.classList.add("result");
-  resultRef.innerHTML = resultPlaceholder();
-  results.appendChild(resultRef);
-  
-  let info = await fetchInfo(url);
-  results.children[index].innerHTML = result(
-    info.images,
-    {
-      diameter: info.dimentions.diameter,
-      width: info.dimentions.width,
-      length: info.dimentions.length,
-      height: info.dimentions.height,
-      depth: info.dimentions.depth
-    }
-  );
-}
-
 function findLinks(str){
   let urlRegex = new RegExp("https?://[^ \n]*/", 'g');
   let links = [];
@@ -39,6 +18,29 @@ function findLinks(str){
     links.push(link[0]);
   }
   return links;
+}
+
+async function processLink(url){
+  // This adds a placeholder to preserve the order of results
+  let index = results.children.length;
+  let resultRef = document.createElement('div');
+  resultRef.classList.add("result");
+  resultRef.innerHTML = resultPlaceholder();
+  results.appendChild(resultRef);
+  
+  let info = await fetchInfo(url);
+  results.children[index].innerHTML = result(
+    (index + 1) + ' - "' +info.name + '"',
+    info.images,
+    {
+      diameter: info.dimentions.diameter,
+      width: info.dimentions.width,
+      length: info.dimentions.length,
+      height: info.dimentions.height,
+      depth: info.dimentions.depth
+    },
+    url
+  );
 }
 
 function test(){
@@ -56,3 +58,5 @@ evaluateButton.addEventListener("click", ()=>{
   let links = findLinks(linksInput.value);
   links.forEach(processLink);
 });
+
+test();

@@ -40,7 +40,7 @@ function imageBox(src){
 </div>`;
 }
 
-function result(images, dimentions){
+function result(title, images, dimentions, link){
   let imgElems = "";
   for (let i = 0; i < images.length; i++){
     imgElems += imageBox(images[i]);
@@ -53,20 +53,26 @@ function result(images, dimentions){
     property("Глубина", dimentions.depth);
   let summaryTxt = summary(dimentions);
   return `
-<div class="properties-box">
-  <p class="summary">${summaryTxt}</p>
-  ${propertyElems}
-</div>
-  ${imgElems}`;
+<a class="result-title-link" href="${link}">${title}</a>
+<div class=result-flex>
+  <div class="properties-box">
+    <p class="summary">${summaryTxt}</p>
+    ${propertyElems}
+  </div>
+  ${imgElems}
+</div>`;
 }
 
 function resultPlaceholder(name = ""){
   return `
-<div class="properties-box">
-  <p class="summary">Загрузка...</p>
-  
+<p class="result-title">UwU</p>
+<div class=result-flex>
+  <div class="properties-box">
+    <p class="summary">Здесь могла быть ваша реклама...</p>
+    
+  </div>
 </div>
 `
 }
 
-export = {result, resultPlaceholder};
+export {result, resultPlaceholder};
