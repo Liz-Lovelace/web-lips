@@ -104,11 +104,12 @@ h1{
          display:flex;
           justify-content:left;
         }
-            /* icon */
+            /* dimention icons */
             .property img{
               width:1.3rem;
               height:1.3rem;
               background-color: #ffffff;
+              background-size: cover;
             }
             /* Width:  */
             .property div p {
@@ -141,4 +142,3 @@ h1{
         .image-buttons button{
           margin-left:0.2rem;
         }
-        

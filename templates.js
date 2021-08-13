@@ -17,10 +17,10 @@ function summary(d){
   return s;
 }
 
-function property(name, value){
+function property(name, value, icon = './icons/defaultIcon.png'){
   if(value)
     return `
-<div class="property"><div><img><p>${name}: </p></div><span>${value}</span></div>`;
+<div class="property"><div><img style="background-image:url('${icon}')"><p>${name}: </p></div><span>${value}</span></div>`;
   else
     return ``;
 }
@@ -46,11 +46,11 @@ function result(title, images, dimentions, link){
     imgElems += imageBox(images[i]);
   }
   let propertyElems =
-    property("Диаметр", dimentions.diameter) +
-    property("Ширина", dimentions.width) +
-    property("Длина", dimentions.length) +
-    property("Высота", dimentions.height) +
-    property("Глубина", dimentions.depth);
+    property("Диаметр", dimentions.diameter, './icons/diameter.png') +
+    property("Ширина", dimentions.width, './icons/width.png') +
+    property("Длина", dimentions.length, './icons/length.png') +
+    property("Высота", dimentions.height, './icons/height.png') +
+    property("Глубина", dimentions.depth, './icons/depth.png');
   let summaryTxt = summary(dimentions);
   return `
 <a class="result-title-link" href="${link}">${title}</a>
